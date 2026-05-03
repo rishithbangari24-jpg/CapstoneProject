@@ -1,0 +1,142 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: var(--transition);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1180px, calc(100% - 32px));
+  min-height: 76px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.brand:hover {
+  transform: scale(1.02);
+}
+
+.brand-mark {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+  color: var(--surface);
+  box-shadow: 0 4px 10px rgba(15, 118, 110, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links a,
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 16px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-links a.active {
+  color: var(--accent);
+  background: rgba(15, 118, 110, 0.08);
+}
+
+.nav-links a:hover,
+.text-button:hover {
+  background: var(--soft);
+  color: var(--ink);
+}
+
+.cart-link {
+  position: relative;
+}
+
+.cart-count {
+  display: grid;
+  min-width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--surface);
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(15, 118, 110, 0.4);
+}
+
+.register-link {
+  background: var(--ink) !important;
+  color: var(--surface) !important;
+  box-shadow: var(--shadow-sm);
+  margin-left: 8px;
+}
+.register-link:hover {
+  background: #334155 !important;
+  transform: translateY(-1px);
+}
+
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 840px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 12px 0;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .nav-links a,
+  .text-button {
+    min-height: 38px;
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

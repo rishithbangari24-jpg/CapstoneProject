@@ -1,0 +1,134 @@
+.cart-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 24px;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 44px 0 72px;
+}
+
+.cart-list {
+  display: grid;
+  gap: 14px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) 128px 90px 44px;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  background: var(--surface);
+}
+
+.cart-item-image {
+  display: grid;
+  width: 96px;
+  height: 96px;
+  place-items: center;
+  border-radius: 8px;
+  background: #f7f8fb;
+}
+
+.cart-item-image img {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+}
+
+.cart-item-details {
+  display: grid;
+  gap: 5px;
+}
+
+.cart-item-title {
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.quantity-control {
+  display: grid;
+  grid-template-columns: 36px 36px 36px;
+  align-items: center;
+  justify-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.cart-line-total {
+  text-align: right;
+}
+
+.summary-panel {
+  position: sticky;
+  top: 92px;
+  height: fit-content;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.summary-list {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.summary-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--muted);
+}
+
+.summary-list dd {
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.summary-total {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  font-size: 1.2rem;
+}
+
+.secure-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 680px) {
+  .cart-item {
+    grid-template-columns: 80px minmax(0, 1fr) 44px;
+  }
+
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .quantity-control,
+  .cart-line-total {
+    grid-column: 2 / -1;
+    justify-self: start;
+  }
+}

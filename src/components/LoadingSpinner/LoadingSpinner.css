@@ -1,0 +1,23 @@
+.loading-wrap {
+  display: grid;
+  min-height: 280px;
+  place-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
